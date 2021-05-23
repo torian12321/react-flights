@@ -4,12 +4,13 @@ import Form from '../../components/Form';
 import Button from '../../components/Button';
 import SelectCountry from '../../components/SelectCountry';
 import DateRange from '../../components/DateRange';
-
-const Filtes = () => {
+import { searchFlights }  from '../../redux/actions';
+const Filtes = ({ onSubmit }: any) => {
   const handleSubmit = (e: any) => {
     console.log('we are doing submit here');
     console.log(e);
     console.log('we are doing submit here');
+    onSubmit();
   }
   return (
     <Form onSubmit={handleSubmit}>
