@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { get } from 'lodash';
 import { fetchLocations } from './locations.actions';
+import { flightsAdd } from './flights.actions';
 import { Dispatch } from '../common';
 // import { AppState } from '../reducers';
 
@@ -14,9 +15,7 @@ export const iniApp = () => (
 
 export const searchFlights = () => (
   dispatch: Dispatch,
-) => {
-  console.log('testttt');
-  return axios
+) => axios
   .get('https://api.skypicker.com/flights',
     {
       params: {
@@ -33,19 +32,13 @@ export const searchFlights = () => (
     })
     .then((response: any = {}) => {
       const flights = get(response, 'data.data', []);
-      console.log('VVVV');
-      console.log(response);
-      console.log(flights);
-
-      // dispatch(locationsAdd(data.map((profile: any = {}) => ({
-      //   id: profile.id,
-      //   name: profile.login,
-      //   url: profile.url,
-      //   imgUrl: profile.avatar_url,
-      // }))));
+      dispatch(flightsAdd(flights.map((f: any) => ({
+        id: f.id,
+        cityFrom: f.cityFrom,
+        cityTo: f.cityTo,
+      }))));
     })
     .catch((error: Error) => console.log(error));
   // dispatch(fetchLocations())
   //   .then(() => console.log('locations loaded'))
   //   .catch((error: Error) => console.log(error));
-};

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Props, State } from './App.interfaces';
 import Filters from './Filters';
+import FlightsList from '../components/FlightsList';
 // import './App.css';
 
 const App: React.FunctionComponent<Props & State> = ({ onLoad }) => {
@@ -11,7 +12,7 @@ const App: React.FunctionComponent<Props & State> = ({ onLoad }) => {
   return (
     <div className="App">
       <Filters />
-      my page ocntent
+      <FlightsList />
     </div>
   );
 }
