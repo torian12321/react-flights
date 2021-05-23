@@ -14,6 +14,7 @@ const DateRange = ({ onChange }: any) => {
       from: startDate,
       to: endDate,
     });
+  // eslint-disable-next-line
   }, [startDate, endDate]);
   const handleOnIniChange = (date: Date) => {
     setStartDate(date);
