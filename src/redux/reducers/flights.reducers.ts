@@ -9,6 +9,7 @@ export interface Flight {
 }
 
 export interface State {
+  loading: boolean,
   allIds: string[],
   byIds: {
     [key: string]: Flight,
@@ -16,6 +17,7 @@ export interface State {
 };
 
 const initialState: State = {
+  loading: false,
   allIds: [],
   byIds: {},
 };
@@ -26,17 +28,12 @@ const reducer = (state = initialState, action: State & Action) => {
       const { flights = []}: any = action.payload;
       const newFlights: any = {};
 
-      console.log('I am here');
-      console.log(action.payload);
       flights.forEach((flight: any) => {
         newFlights[flight.id] = {
           ...flight,
         };
       });
 
-
-      console.log(flights);
-      console.log(newFlights);
       return {
         ...state,
         allIds: [
@@ -48,6 +45,13 @@ const reducer = (state = initialState, action: State & Action) => {
           ...newFlights
         },
       };
+
+    case ACTIONS.FLIGHTS_SET_LOADER:
+        const { loading = false }: any = action.payload;
+        return {
+          ...state,
+          loading,
+        };
     case ACTIONS.FLIGHTS_RESET:
       return initialState;
     default:
