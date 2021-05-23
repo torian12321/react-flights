@@ -1,0 +1,18 @@
+.btn {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: .8em 2em;
+  font-weight: bold;
+  background: var(--color-main);
+  color: white;
+  transition: background .4s;
+
+  &:hover {
+    background: var(--color-main-dark);
+  }
+}
+
+.disabled {
+  background: grey;
+}

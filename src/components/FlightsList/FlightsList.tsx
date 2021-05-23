@@ -1,6 +1,7 @@
 import React from 'react';
 import FlightCard from '../FlightCard';
 import { Props } from './FlightsList.interfaces';
+import styles from './FlightsList.module.scss';
 // import './App.css';
 
 const FlightList: React.FunctionComponent<Props> = ({
@@ -17,7 +18,7 @@ const FlightList: React.FunctionComponent<Props> = ({
   );
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {!!isLoading
         ? 'Loading...'
         : (

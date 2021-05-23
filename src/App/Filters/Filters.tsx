@@ -1,11 +1,14 @@
 import React from 'react';
 import Form from '../../components/Form';
-// import Field from '../../components/FieldWrapper';
 import Button from '../../components/Button';
 import SelectCountry from '../../components/SelectCountry';
 import DateRange from '../../components/DateRange';
-import { searchFlights }  from '../../redux/actions';
-const Filtes = ({ onSubmit }: any) => {
+import { Props, State } from './Filters.interfaces';
+
+const Filtes = ({
+  isLoading = false,
+  onSubmit
+}: Props & State) => {
   const handleSubmit = (e: any) => {
     console.log('we are doing submit here');
     console.log(e);
@@ -14,13 +17,10 @@ const Filtes = ({ onSubmit }: any) => {
   }
   return (
     <Form onSubmit={handleSubmit}>
-      {/* <Field name='field 1' label="From" />
-      <Field name='field 2' label="To" />
-      <Field name='field 3' /> */}
       <SelectCountry name='from' label="From" />
       <SelectCountry name='to' label="To" />
       <DateRange name="dates" />
-      <Button label="Search" />
+      <Button label="Search" loading={isLoading} />
     </Form>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import styles from './DateRange.module.scss';
 
 const DateRange = ({ onChange }: any) => {
   const iniDateDefault: Date = new Date();
@@ -21,8 +22,9 @@ const DateRange = ({ onChange }: any) => {
     setEndDate(date);
   }
   return (
-    <>
+    <div className={styles.wrapper}>
       <DatePicker
+        className={styles.input}
         selected={startDate}
         onChange={handleOnIniChange}
         selectsStart
@@ -30,6 +32,7 @@ const DateRange = ({ onChange }: any) => {
         endDate={endDate}
       />
       <DatePicker
+        className={styles.input}
         selected={endDate}
         onChange={handleOnEndChange}
         selectsEnd
@@ -37,7 +40,7 @@ const DateRange = ({ onChange }: any) => {
         endDate={endDate}
         minDate={startDate}
       />
-    </>
+    </div>
   );
 };
 

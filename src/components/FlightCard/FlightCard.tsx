@@ -1,7 +1,6 @@
 import React from 'react';
 import { Props } from './FlightCard.interfaces';
-// import Filters from './Filters';
-// import './App.css';
+import styles from './FlightCard.module.scss';
 
 const FlightCard: React.FunctionComponent<Props> = ({}) => {
   // useEffect(() => {
@@ -9,7 +8,7 @@ const FlightCard: React.FunctionComponent<Props> = ({}) => {
   // }, [onLoad]);
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       Flight goes here
       my page ocntent
     </div>

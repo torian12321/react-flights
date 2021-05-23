@@ -1,21 +1,33 @@
 import React from 'react';
-import { Form as RFFForm } from 'react-final-form';
+import classNames from 'classnames';
+import { Props } from './Button.interfaces';
+import styles from './Button.module.scss';
 
 const Form = ({
   children,
   type = 'submit',
   label,
+  disabled = false,
+  loading = false,
   onClick = () => {}
-}: any) => {
+}: Props) => {
+  const isClickable = !(disabled || loading);
   const content = children || label;
   const handleOnClick = (v: any) => {
-    onClick();
+    if(isClickable) {
+      onClick();
+    };
   };
 
   return !!content ? (
     <button
       type={type}
       onClick={handleOnClick}
+      disabled={!isClickable}
+      className={classNames(
+        styles.btn,
+        !isClickable && styles.disabled,
+      )}
     >
     {content}
     </button>
