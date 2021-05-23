@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field as RFFField } from 'react-final-form';
 import SelectCountry from './SelectCountry';
-import { Props } from './SelectCountry.interfaces';
 
 export interface Option {
   value: string,

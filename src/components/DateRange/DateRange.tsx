@@ -14,7 +14,7 @@ const DateRange = ({ onChange }: any) => {
       from: startDate,
       to: endDate,
     });
-  }, [startDate, setEndDate]);
+  }, [startDate, endDate]);
   const handleOnIniChange = (date: Date) => {
     setStartDate(date);
   }
