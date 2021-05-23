@@ -1,17 +1,21 @@
 import React from 'react';
 import { Field as RFFField } from 'react-final-form';
-import { Props } from './FieldWrapper.interfaces';
+import DateRange from './DateRange';
+import { Props } from './DateRange.interfaces';
 
 export interface Option {
   value: string,
   label: string,
 };
 
-const Field = ({ name }: any) => (
+const Field = ({ name, label = 'Search' }: Props) => (
   <RFFField name={name}>
     {(props: any) => (
       <div>
-        <input {...props.input} />
+        <DateRange
+          label={label}
+          {...props.input}
+        />
       </div>
     )}
   </RFFField>

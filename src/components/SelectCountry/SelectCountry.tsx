@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import { Props } from './SelectCountry.interfaces';
 
 export interface Option {
   value: string,
@@ -9,10 +10,12 @@ export interface Option {
 
 const opt: Option[] = [];
 
-const SelectCountry = () => {
+const SelectCountry = ({ onChange, label = 'Search' }: Props) => {
   const [options, setOptions] = useState(opt);
-
-  const handleOnChange = (value: string) => {
+  const handleOnChange = (values: any) => {
+    onChange(values);
+  };
+  const handleOnInputChange = (value: string) => {
     axios
     .get(`https://api.skypicker.com/locations?term=${value}&location_types=airport`)
     .then((response: any) => {
@@ -22,7 +25,6 @@ const SelectCountry = () => {
         value: location.id,
         label: location.name,
       })))
-      console.log(response);
     })
     .catch((error: Error) => console.log(error));
   };
@@ -31,8 +33,9 @@ const SelectCountry = () => {
     <Select
       isMulti
       options={options}
-      onInputChange={handleOnChange}
-      placeholder="From"
+      onInputChange={handleOnInputChange}
+      onChange={handleOnChange}
+      placeholder={label}
     />
   );
 };

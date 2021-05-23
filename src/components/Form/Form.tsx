@@ -5,9 +5,8 @@ const Form = ({
   children,
   onSubmit = () => {}
 }: any) => {
-  const handleOnSubmit = (v: any) => {
-    console.log(v);
-    onSubmit();
+  const handleOnSubmit = (values: Object) => {
+    onSubmit(values);
   }
   return (
     <RFFForm onSubmit={handleOnSubmit}>

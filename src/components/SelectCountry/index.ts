@@ -1,4 +1,4 @@
-import SelectCountry from './SelectCountry';
+import SelectCountry from './SelectCountry.wrapper';
 
 export default SelectCountry;
 export { SelectCountry };

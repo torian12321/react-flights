@@ -1,17 +1,21 @@
 import React from 'react';
 import { Field as RFFField } from 'react-final-form';
-import { Props } from './FieldWrapper.interfaces';
+import SelectCountry from './SelectCountry';
+import { Props } from './SelectCountry.interfaces';
 
 export interface Option {
   value: string,
   label: string,
 };
 
-const Field = ({ name }: any) => (
+const Field = ({ name, label = 'Search' }: any) => (
   <RFFField name={name}>
     {(props: any) => (
       <div>
-        <input {...props.input} />
+        <SelectCountry
+          label={label}
+          {...props.input}
+        />
       </div>
     )}
   </RFFField>
