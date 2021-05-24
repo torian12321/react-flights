@@ -4,6 +4,7 @@ export interface Props {
   label?: string,
   disabled?: boolean,
   loading?: boolean,
+  className?: string,
   type?: 'submit' | 'reset' | 'button',
   onClick?: Function,
 };

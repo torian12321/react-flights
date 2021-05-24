@@ -3,15 +3,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 0 10px;
-  // & > div {
-  //   flex: 1 0;
-  //   background: yellow;
+  gap: 12px;
 
-  //   & > div {
-  //     background: red;
-  //     width: 100%;
-  //   }
-  // }
+  :global(.react-datepicker-wrapper) {
+    flex-grow: 1;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
 }
 .input {
   background: white;

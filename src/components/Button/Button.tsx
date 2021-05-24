@@ -9,6 +9,7 @@ const Form = ({
   label,
   disabled = false,
   loading = false,
+  className,
   onClick = () => {}
 }: Props) => {
   const isClickable = !(disabled || loading);
@@ -27,6 +28,7 @@ const Form = ({
       className={classNames(
         styles.btn,
         !isClickable && styles.disabled,
+        className,
       )}
     >
     {content}

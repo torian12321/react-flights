@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import SelectCountry from '../../components/SelectCountry';
 import DateRange from '../../components/DateRange';
 import { Props, State } from './Filters.interfaces';
+import styles from './Filters.module.scss';
 
 const isValid = (values: any = {}) => {
   const { dates = {}} = values;
@@ -38,7 +39,7 @@ const Filtes = ({
           <SelectCountry name='from' label="From" />
           <SelectCountry name='to' label="To" />
           <DateRange name="dates" />
-          <Button label="Search" loading={isLoading} disabled={!isValid(values)} />
+          <Button label="Search" loading={isLoading} disabled={!isValid(values)} className={styles.btn} />
         </form>
       )}
     </RFFForm>
