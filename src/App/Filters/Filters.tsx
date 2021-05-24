@@ -9,14 +9,14 @@ const Filtes = ({
   isLoading = false,
   onSubmit
 }: Props & State) => {
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (values: any) => {
     console.log('we are doing submit here');
-    console.log(e);
+    console.log(values);
     console.log('we are doing submit here');
-    onSubmit();
+    onSubmit(values);
   }
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} onChange={(e: any) => console.log(e)}>
       <SelectCountry name='from' label="From" />
       <SelectCountry name='to' label="To" />
       <DateRange name="dates" />

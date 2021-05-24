@@ -10,7 +10,7 @@ const mapState = (state: AppState): Props => ({
   isLoading: getIsLoading(state),
 });
 const mapDispatchToProps = (dispatch: Function): State => ({
-  onSubmit: () => dispatch(searchFlights()),
+  onSubmit: (vals: any) => dispatch(searchFlights(vals)),
 });
 
 export default connect(
