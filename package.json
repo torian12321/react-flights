@@ -2,6 +2,7 @@
   "name": "react-flights",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://torian12321.github.io/react-flights/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
