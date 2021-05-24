@@ -14,5 +14,8 @@
 }
 
 .disabled {
-  background: grey;
+  &,
+  &:hover {
+    background: #ababab;
+  }
 }
