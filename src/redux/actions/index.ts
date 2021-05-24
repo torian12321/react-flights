@@ -17,7 +17,7 @@ export const searchFlights = (values: any) => (
 ) => {
   dispatch(flightsSetLoading(true));
   const { from, to, dateFrom, dateTo } = values;
-console.log(values);
+
   axios
   .get('https://api.skypicker.com/flights',
     {
@@ -26,8 +26,6 @@ console.log(values);
         fly_from: from,
         fly_to: to,
         partner: 'skypicker',
-        // date_from: '13/12/2021',
-        // date_to: '24/12/2021',
         date_from: dateFrom,
         date_to: dateTo,
         sort: 'price',

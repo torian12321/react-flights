@@ -16,20 +16,16 @@ export const locationsAdd = (loctions: any[]): Action => ({
 
 export const fetchLocations = () => (
   dispatch: Dispatch,
-): Promise<any> => {
-  console.log('locations');
-  return axios
-    .get('https://api.skypicker.com/locations?term=Bcn&location_types=airport')
-    .then((response: any) => {
-      const { data = [] } = response;
-      console.log(response);
+): Promise<any> => axios
+  .get('https://api.skypicker.com/locations?term=Bcn&location_types=airport')
+  .then((response: any) => {
+    const { data = [] } = response;
 
-      dispatch(locationsAdd(data.map((profile: any = {}) => ({
-        id: profile.id,
-        name: profile.login,
-        url: profile.url,
-        imgUrl: profile.avatar_url,
-      }))));
-    })
-    .catch((error: Error) => console.log(error));
-};
+    dispatch(locationsAdd(data.map((profile: any = {}) => ({
+      id: profile.id,
+      name: profile.login,
+      url: profile.url,
+      imgUrl: profile.avatar_url,
+    }))));
+  })
+  .catch((error: Error) => console.log(error));
