@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import { Props, State } from './App.interfaces';
+import React from 'react';
+import { Props } from './App.interfaces';
 import Filters from './Filters';
 import FlightsList from '../components/FlightsList';
-// import './App.css';
+import styles from './App.module.scss';
 
-const App: React.FunctionComponent<Props & State> = ({ onLoad }) => {
-  useEffect(() => {
-    // onLoad && onLoad();
-  }, [onLoad]);
-
-  return (
-    <div className="App">
+const App: React.FunctionComponent<Props> = () =>(
+  <div className={styles.wrapper}>
+    <div className={styles.filters}>
       <Filters />
+    </div>
+    <div className={styles.table}>
       <FlightsList />
     </div>
-  );
-}
+  </div>
+);
 
 export default App;

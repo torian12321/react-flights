@@ -16,7 +16,6 @@ export const locationsAdd = (loctions: any[]): Action => ({
 
 export const fetchLocations = () => (
   dispatch: Dispatch,
-  // getState: () => AppState
 ): Promise<any> => {
   console.log('locations');
   return axios

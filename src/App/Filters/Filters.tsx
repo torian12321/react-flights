@@ -10,18 +10,17 @@ const Filtes = ({
   onSubmit
 }: Props & State) => {
   const handleSubmit = (values: any) => {
-    console.log('we are doing submit here');
-    console.log(values);
-    console.log('we are doing submit here');
     onSubmit(values);
   }
   return (
-    <Form onSubmit={handleSubmit} onChange={(e: any) => console.log(e)}>
-      <SelectCountry name='from' label="From" />
-      <SelectCountry name='to' label="To" />
-      <DateRange name="dates" />
-      <Button label="Search" loading={isLoading} />
-    </Form>
+    <div>
+      <Form onSubmit={handleSubmit} onChange={(e: any) => console.log(e)}>
+        <SelectCountry name='from' label="From" />
+        <SelectCountry name='to' label="To" />
+        <DateRange name="dates" />
+        <Button label="Search" loading={isLoading} />
+      </Form>
+    </div>
   );
 };
 export default Filtes;

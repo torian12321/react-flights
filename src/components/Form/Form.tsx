@@ -10,8 +10,8 @@ const Form = ({
     const { from = [], to = [], dates = {} } = values;
     
     onSubmit({
-      from: from.map((f: any) => f.value),
-      to: to.map((t: any) => t.value),
+      from: from.map((f: any) => f.value).join(','),
+      to: to.map((t: any) => t.value).join(','),
       dateFrom: moment(dates.from).format('DD/MM/YYYY'),
       dateTo: moment(dates.to).format('DD/MM/YYYY'),
     });

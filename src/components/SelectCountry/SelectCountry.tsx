@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { Props } from './SelectCountry.interfaces';
+import styles from './SelectCountry.module.scss';
 
 export interface Option {
   value: string,
@@ -36,6 +37,7 @@ const SelectCountry = ({ onChange, label = 'Search' }: Props) => {
       onInputChange={handleOnInputChange}
       onChange={handleOnChange}
       placeholder={label}
+      className={styles.wrapper}
     />
   );
 };

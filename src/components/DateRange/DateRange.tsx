@@ -31,6 +31,7 @@ const DateRange = ({ onChange }: any) => {
         selectsStart
         startDate={startDate}
         endDate={endDate}
+        minDate={iniDateDefault}
       />
       <DatePicker
         className={styles.input}
