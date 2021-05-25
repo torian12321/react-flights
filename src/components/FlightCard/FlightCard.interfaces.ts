@@ -5,4 +5,5 @@ export interface Props {
   price?: string,
   duration?: number,
   flightUrl?: string,
+  route?: any[],
 };

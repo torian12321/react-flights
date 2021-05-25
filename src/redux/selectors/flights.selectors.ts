@@ -26,13 +26,10 @@ export const getFlightById = (state: AppState, id: string): Flight => {
     duration = {},
   } = getFlightData;
 
-  // const durationTime = duration.departure;
-
-
   return {
     ...getFlightData,
-    fromName: `${cityFrom} - ${countryFrom.name}`,
-    toName: `${cityTo} - ${countryTo.name}`,
+    fromName: `${cityFrom} (${countryFrom.name})`,
+    toName: `${cityTo} (${countryTo.name})`,
     flightUrl: deep_link,
     price: `€${conversion.EUR}`,
     duration: duration.departure || 0,

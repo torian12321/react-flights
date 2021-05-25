@@ -16,6 +16,7 @@ const mapState = (state: AppState, ownprops: Props): Props => {
     price: flight.price,
     duration: flight.duration,
     flightUrl: flight.flightUrl,
+    route: flight.route,
   }
 };
 export default connect(

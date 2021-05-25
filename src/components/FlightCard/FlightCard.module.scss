@@ -12,13 +12,23 @@ $border-color: grey;
   border: $border-color solid 1px;
   display: flex;
   flex-direction: column;
-  // box-shadow: rgb(37 42 49 / 16%) 0px 0px 2px 0px, rgb(37 42 49 / 12%) 0px 1px 4px 0px;
+  box-shadow: 0px 0px 11px -5px #000000;
+
   @include bp-sm {
     flex-direction: row;
   }
   &:hover {}
 }
+.step {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $border-color;
+  padding: 10px 0;
 
+  .stepDetail {
+    margin: 2px 0;
+  }
+}
 .content,
 .details {
   padding: 8px;
@@ -27,6 +37,12 @@ $border-color: grey;
 
 .content {
   flex-grow: 1;
+
+  .contentHeader {
+    margin: 8px 0;
+    display: block;
+    font-weight: bold;
+  }
 }
 .details {
   display: flex;
