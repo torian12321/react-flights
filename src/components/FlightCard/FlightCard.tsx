@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button';
+import Arrow from './FlightCard.Arrow';
 import { Props } from './FlightCard.interfaces';
 import styles from './FlightCard.module.scss';
 
@@ -10,9 +11,9 @@ const formatTime = (time: number = 0): string => {
 const RouteStep = ({ from, to, duration}: any) => (
   <div className={styles.step}>
     <span className={styles.stepDetail}>{from}</span>
-    <span className={styles.stepDetail}>↓</span>
+    <Arrow />
     <span className={styles.stepDetail}>{formatTime(duration)}</span>
-    <span className={styles.stepDetail}>↓</span>
+    <Arrow />
     <span className={styles.stepDetail}>{to}</span>
   </div>
 )
