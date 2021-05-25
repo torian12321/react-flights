@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './FlightCard.module.scss';
 
-export default () => (
+const Arrow = () => (
   <span className={styles.arrow}>↓</span>
 );
+
+export default Arrow;
