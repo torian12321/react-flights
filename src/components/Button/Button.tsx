@@ -14,7 +14,7 @@ const Form = ({
 }: Props) => {
   const isClickable = !(disabled || loading);
   const content = children || label;
-  const handleOnClick = (v: any) => {
+  const handleOnClick = () => {
     if(isClickable) {
       onClick();
     };
@@ -31,7 +31,7 @@ const Form = ({
         className,
       )}
     >
-    {content}
+    {!loading ? content : 'Loading...'}
     </button>
   ) : null;
 };
