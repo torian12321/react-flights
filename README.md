@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Basic info
 
+App to compare find and compare flights using [kiwi API](https://docs.kiwi.com/)
 
 Check the result [here](https://torian12321.github.io/react-flights/)
 
@@ -23,3 +24,8 @@ To build a production copy, run `npm build`
   - [CSS-modules](https://github.com/css-modules/css-modules)
   - [react-select](https://react-select.com/)
   - [react-datepicker](https://reactdatepicker.com/)
+
+## TODO
+  - Add better types (specially for flights)
+  - Improve UI
+  - Improve how to show times (1.75h should be 1h 45m)
