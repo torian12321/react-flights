@@ -24,7 +24,7 @@ const FlightList: React.FunctionComponent<Props> = ({
         : (
           hasFlights
           ? renderTiles()
-          : 'Please filter better'
+          : 'Please, select flight conditions'
         )
       }
     </div>
