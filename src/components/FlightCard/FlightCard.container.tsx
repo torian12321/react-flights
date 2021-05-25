@@ -8,12 +8,14 @@ import { Props } from './FlightCard.interfaces';
 const mapState = (state: AppState, ownprops: Props): Props => {
   const flight: any = getFlightById(state, ownprops.id);
   console.log('Flichg', flight);
-const { conversion = {} } = flight;
+
   return {
-    id: 'aa',
-    from: 'bb',
-    to: 'cc',
-    price: `€ ${conversion.EUR}`
+    id: flight.id,
+    from: flight.fromName,
+    to: flight.toName,
+    price: flight.price,
+    duration: flight.duration,
+    flightUrl: flight.flightUrl,
   }
 };
 export default connect(

@@ -20,7 +20,7 @@ $border-color: grey;
 }
 
 .content,
-.price {
+.details {
   padding: 8px;
   border: $border-color solid 0;
 }
@@ -28,16 +28,22 @@ $border-color: grey;
 .content {
   flex-grow: 1;
 }
-.price {
-  // background: red;
+.details {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: space-between;
   border-top-width: 1px;
-  // border-width: $border-width;
-  // margin: $border-color solid;
-  background: #fff1c5;
   @include bp-sm {
     border-width: 0;
     border-left-width: 1px;
-    // flex-basis: 10px;
+  }
+
+  .price {
+    margin: 4px 0 0;
+    font-weight: bold;
+  }
+  .btn {
+    margin: 8px 0 0;
   }
 }

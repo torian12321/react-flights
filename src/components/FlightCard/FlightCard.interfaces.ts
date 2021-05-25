@@ -3,4 +3,6 @@ export interface Props {
   from?: string,
   to?: string,
   price?: string,
+  duration?: number,
+  flightUrl?: string,
 };

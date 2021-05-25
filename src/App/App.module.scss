@@ -8,18 +8,20 @@
 
 .filters,
 .table {
-  padding: 20px;
-  margin: auto;
   width: 100%;
+  box-sizing: border-box;
   max-width: 800px;
+  margin: auto;
 }
 
 .filters {
+  padding: 20px;
   border-radius: 4px;
   border: 1px solid grey;
   background: white;
 }
 
 .table {
+  padding: 20px 0;
   flex-grow: 1;
 }
